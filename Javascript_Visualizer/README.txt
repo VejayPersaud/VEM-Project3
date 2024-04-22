@@ -11,3 +11,10 @@ NOTE:Depending on the sort, you'll see different intermediate and end colors. So
 
 To view the logic for the visualizer it is contained in the folder "js" while the visual specifications are in "css". 
 DO NOT move index.html, index.js, or styles.css because index.html looks for them based on their relative paths.
+
+
+HTML and CSS setup from here 
+//Sources
+//Title: Selection Sort Visualizer in Javascript
+//CSS,HTML, and Selection sort used as base to stylize and build project
+//Reference Pages: https://www.geeksforgeeks.org/selection-sort-visualizer-in-javascript/
