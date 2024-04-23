@@ -524,7 +524,59 @@ void heapify(int* array, int size, int index) {
 }
 
 void merge(int* array, int left, int mid, int right) {
+	// Merge two subarrays
 
+	int subArrayOne = mid - left + 1;
+	int subArrayTwo = right - mid;
+
+	// Create temp arrays
+	int* leftArray = new int[subArrayOne];
+	int* rightArray = new int[subArrayTwo];
+
+	// Copy data to leftArray and rightArray
+
+	for (int i = 0; i < subArrayOne; i++)
+		leftArray[i] = array[left + i];
+
+	for (int j = 0; j < subArrayTwo; j++)
+		rightArray[j] = array[mid + 1 + j];
+
+	// Inital indices
+
+	int indexOfSubArrayOne = 0;
+	int indexOfSubArrayTwo = 0;
+	int indexOfMergedArray = left;
+
+	while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {  // Merge the temp arrays
+
+		if (leftArray[indexOfSubArrayOne] <= rightArray[indexOfSubArrayTwo]) {
+			array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
+			indexOfSubArrayOne++;
+		}
+
+		else {
+			array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
+			indexOfSubArrayTwo++;
+		}
+
+		indexOfMergedArray++;
+	}
+
+	// Copy the remaining elements of the sub arrays
+
+	while (indexOfSubArrayOne < subArrayOne) {
+		array[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
+		indexOfSubArrayOne++;
+		indexOfMergedArray++;
+	}
+
+	while (indexOfSubArrayTwo < subArrayTwo) {
+		array[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
+		indexOfSubArrayTwo++;
+		indexOfMergedArray++;
+	}
+
+	// Reference: @ https://www.geeksforgeeks.org/merge-sort/
 }
 
 int partitionArray(int* array, int begin, int end) {
@@ -598,7 +650,19 @@ void HeapSort(int* array, int size) {
 }
 
 void MergeSort(int* array, int begin, int end) {
+	// Sort an array with mergesort
 
+	if (begin >= end)  // Base case of recursion
+		return;
+
+	int mid = begin + (end - begin) / 2;
+
+	// Sort the left and right portions
+
+	MergeSort(array, begin, mid);
+	MergeSort(array, mid + 1, end);
+
+	merge(array, begin, mid, end);  // Merge the two halves back together
 }
 
 void QuickSort(int* array, int begin, int end) {
