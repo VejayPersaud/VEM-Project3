@@ -9,10 +9,13 @@ Our project is divided into two main parts:
 1. **C++ Sorting Algorithm Runtime Simulator**
    - Located in the `src` folder.
    - You'll find a dedicated `README.txt` in this folder which provides detailed instructions on how to run the runtime simulator.
+    ![Sorting Algorithm Runtime Simulator](resources/images/runtimesimulator.png)
+
 
 2. **JavaScript Sorting Algorithm Visualizer**
    - Located in the `Javascript_Visualizer` folder.
    - This folder also contains a `README.txt` with instructions on how to run the visualizer.
+    ![Sorting Algorithm Visualizer](resources/images/SortingVisualizer.png)
 
 ## Additional Notes
 
