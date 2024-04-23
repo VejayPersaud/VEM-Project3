@@ -9,7 +9,7 @@
 using namespace std;
 
 namespace P3 {
-	const int size = 10000000;
+	const int size = 10000;
 	const int tests = 16;
 
 	int* unsorted = new int[size];
@@ -42,13 +42,13 @@ void combine2array(int* array1, int* array2, int size1, int size2);
 void combinearrays(int* array, int size, int thread_count);
 void heapify(int* array, int size, int index);
 void merge(int* array, int left, int mid, int right);
-int partition(int* array, int start, int end);
+int partitionArray(int* array, int begin, int end);
 // Main Sorting
 void BubbleSort(int* array, int size);
 void stdsort(int* array, int size);
 void HeapSort(int* array, int size);
 void MergeSort(int* array, int begin, int end);
-void QuickSort(int* array, int start, int end);
+void QuickSort(int* array, int begin, int end);
 // Multi-Main Sorting // Accepts int values 2->size
 void MultiBubbleSort(int* array, int size, int thread_count);
 void Multistdsort(int* array, int size, int thread_count);
@@ -507,8 +507,39 @@ void merge(int* array, int left, int mid, int right) {
 
 }
 
-int partition(int* array, int start, int end) {
+int partitionArray(int* array, int begin, int end) {
+	// Partition an array for quick sorting
 
+	int pivotIndex = array[begin];
+	int count = 0;
+
+	for (int i = begin + 1; i <= end; i++) {
+		if (array[i] <= pivotIndex)
+			count++;
+	}
+
+	// Giving pivot element its correct position
+
+	int pivotIndex = begin + count;
+	swap(array[pivotIndex], array[begin]);
+
+	// Sort to the left and right of the pivot index
+
+	while (begin < pivotIndex && end > pivotIndex) {
+
+		while (array[begin] <= pivotIndex)
+			begin++;
+
+		while (array[end] > pivotIndex)
+			end--;
+
+		if (begin < pivotIndex && end > pivotIndex)
+			swap(array[begin++], array[end--]);
+	}
+
+	return pivotIndex;
+
+	// Reference: @ https://www.geeksforgeeks.org/quick-sort/?ref=lbp
 }
 
 // Algorithms
@@ -541,8 +572,16 @@ void MergeSort(int* array, int begin, int end) {
 
 }
 
-void QuickSort(int* array, int start, int end) {
+void QuickSort(int* array, int begin, int end) {
+	// Sort an array with quicksort
 
+	if (begin >= end)  // Base case of recursion
+		return;
+
+	int pivotIndex = partitionArray(array, begin, end);  // Partition the array
+
+	QuickSort(array, begin, pivotIndex - 1);  // Sort left of pivot
+	QuickSort(array, pivotIndex + 1, end);  // Sort right of pivot
 }
 
 // Multi-Main Sorting
@@ -743,5 +782,3 @@ void MultiBubbleSortVis(int* array, int size, int thread_count, ofstream* Out, s
 	*Out << "complete" << '\n';
 	// Credit for this bubble sort goes to GeeksForGeeks @ https://www.geeksforgeeks.org/bubble-sort/
 }
-
-
