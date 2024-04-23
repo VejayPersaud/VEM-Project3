@@ -1,6 +1,22 @@
-#This is our Project 3 Repository! It is a learning tool for learning about Sorting Algorithms.
-#The project is split into two resources, a C++ sorting algorithm runtime simulator and the other is a Javascript sorting algorithm visualizer.
-#The C++ runtime simulator can be found in folder "src". Inside there will be another README.txt specifically for that file on how to run the runtime simulator.
-#The Javascript visualizer can be found in the folder "Javascript_Visualizer". Inside there will be another README.txt specifically on how to run the visualizer.
+# Welcome to Project 3 Repository!
 
-#Note: The resources folder and TemplateUseDoc.md came with the template, this is not used specifically by our project files. 
+This repository is a learning tool dedicated to exploring **Sorting Algorithms**.
+
+## Project Components
+
+Our project is divided into two main parts:
+
+1. **C++ Sorting Algorithm Runtime Simulator**
+   - Located in the `src` folder.
+   - You'll find a dedicated `README.txt` in this folder which provides detailed instructions on how to run the runtime simulator.
+
+2. **JavaScript Sorting Algorithm Visualizer**
+   - Located in the `Javascript_Visualizer` folder.
+   - This folder also contains a `README.txt` with instructions on how to run the visualizer.
+
+## Additional Notes
+
+- The `resources` folder and `TemplateUseDoc.md` are part of the original template and are not directly used by our project files.
+
+Feel free to explore the repositories and contribute!
+
