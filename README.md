@@ -8,7 +8,7 @@ Our project is divided into two main parts:
 
 1. **C++ Sorting Algorithm Runtime Simulator**
    - Located in the `src` folder.
-   - You'll find a dedicated `README.txt` in this folder which provides detailed instructions on how to run the runtime simulator.
+   - You'll find a dedicated `README.txt` in this folder which provides detailed instructions on how to run the simulator.
     ![Sorting Algorithm Runtime Simulator](resources/images/runtimesimulator.png)
 
 
