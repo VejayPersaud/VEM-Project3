@@ -6,6 +6,7 @@ To run the visualizer, simply open `index.html` with a browser by right-clicking
 
 1. **Initial Display:**
    - Upon opening or refreshing the page, you will see a set of blue unsorted bars with their labels. This is the expected start behavior.
+     ![Sorting Algorithm Visualizer](VisualizerStart.png)
 
 2. **Running a Sort:**
    - Click one of the sort options. The sort animation starts and runs to completion.
