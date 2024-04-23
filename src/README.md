@@ -17,7 +17,7 @@ To properly use `main.cpp`, follow these steps within your development environme
   - Runtime of a standard sort.
   - Runtime of a multithreaded version of the sort.
 
- ![Sorting Algorithm Runtime Simulator](resources/images/runtimesimulator.png)
+ ![Sorting Algorithm Runtime Simulator](images/runtimesimulator.png)
 
  Use this tool to understand how common sorting algorithms perform in milliseconds instead of their big O complexity.
 
