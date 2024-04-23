@@ -500,7 +500,27 @@ void combinearrays(int* array, int size, int thread_count) {
 }
 
 void heapify(int* array, int size, int index) {
+	// Heapify a subtree
 
+	// Initialize indices
+
+	int largest = index;
+	int left = (2 * index) + 1;
+	int right = (2 * index) + 2;
+
+	if (left < size && array[left] > array[largest])  // The left child greater than root
+		largest = left;
+
+	if (right < size && array[right] > array[largest])  // The right child is is the new largest
+		largest = right;
+
+	if (largest != index) {  // Lergest is not the root
+
+		swap(array[index], array[largest]);
+		heapify(array, size, largest); // Heapify the sub-tree
+	}
+
+	// Reference: @ https://www.geeksforgeeks.org/heap-sort
 }
 
 void merge(int* array, int left, int mid, int right) {
@@ -510,11 +530,11 @@ void merge(int* array, int left, int mid, int right) {
 int partitionArray(int* array, int begin, int end) {
 	// Partition an array for quick sorting
 
-	int pivotIndex = array[begin];
+	int pivotPoint = array[begin];
 	int count = 0;
 
 	for (int i = begin + 1; i <= end; i++) {
-		if (array[i] <= pivotIndex)
+		if (array[i] <= pivotPoint)
 			count++;
 	}
 
@@ -527,10 +547,10 @@ int partitionArray(int* array, int begin, int end) {
 
 	while (begin < pivotIndex && end > pivotIndex) {
 
-		while (array[begin] <= pivotIndex)
+		while (array[begin] <= pivotPoint)
 			begin++;
 
-		while (array[end] > pivotIndex)
+		while (array[end] > pivotPoint)
 			end--;
 
 		if (begin < pivotIndex && end > pivotIndex)
@@ -565,7 +585,16 @@ void stdsort(int* array, int size) {
 }
 
 void HeapSort(int* array, int size) {
+	// Sort an array with heapsort
 
+	for (int i = (size / 2) - 1; i >= 0; i--)  // Build heap in place
+		heapify(array, size, i);
+
+	for (int i = size - 1; i >= 0; i--) {
+		swap(array[0], array[i]);
+
+		heapify(array, i, 0);
+	}
 }
 
 void MergeSort(int* array, int begin, int end) {
