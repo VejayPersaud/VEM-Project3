@@ -3,4 +3,4 @@
 #The C++ runtime simulator can be found in folder "src". Inside there will be another README.txt specifically for that file on how to run the runtime simulator.
 #The Javascript visualizer can be found in the folder "Javascript_Visualizer". Inside there will be another README.txt specifically on how to run the visualizer.
 
-#Note: The resources folder came with the template, this is not used specifically by our files.
+#Note: The resources folder and TemplateUseDoc.md came with the template, this is not used specifically by our project files. 
