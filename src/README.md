@@ -1,4 +1,4 @@
-# How to Use `main.cpp` for Debugging
+# How to Use `main.cpp` 
 
 To properly use `main.cpp`, follow these steps within your development environment. 
 ## Getting Started
@@ -18,4 +18,6 @@ To properly use `main.cpp`, follow these steps within your development environme
   - Runtime of a multithreaded version of the sort.
 
  ![Sorting Algorithm Runtime Simulator](resources/images/runtimesimulator.png)
+
+ Use this tool to understand how common sorting algorithms perform in milliseconds instead of their big O complexity.
 
